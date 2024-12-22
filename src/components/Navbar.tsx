@@ -3,10 +3,14 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import { FaGithub } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
+import { IoSunnyOutline } from "react-icons/io5";
 import NavMenu from "@/components/NavMenu";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
     const currentPath = usePathname()
+    const {setTheme ,theme} = useTheme()
 
   return (
     <div className="flex items-center w-full justify-between p-5 fixed top-0 z-50 backdrop-blur-md bg-background bg-opacity-30">
@@ -21,9 +25,12 @@ export default function Navbar() {
         <Link href="/privacy" className={currentPath === "/privacy" ? "currentUnderline" : "underlineHover"}>Privacy Policy</Link>
       </div>
       {/* Github button */}
-        <Link href="https://github.com/ArctyZ" className="hidden md:block" target="_blank"><Button variant={"outline"} className="bg-[#F3FBFC]">Github <FaGithub/></Button></Link>
+        <div className="flex gap-2">
+        <Button variant={"ghost"} onClick={theme == "light" ? () => setTheme("dark") : () => setTheme("light")}>{theme == "light" ? <FaMoon/> :  <IoSunnyOutline/>}</Button>
+        <Link href="https://github.com/ArctyZ/filefusion-converter" className="hidden md:block" target="_blank"><Button variant={"outline"} className="bg-[#F3FBFC]">Github <FaGithub/></Button></Link>
+        </div>
+      {/* Navmobile */}
         <NavMenu/>
-      {/* Nav mobile */}
 
     </div>
   );

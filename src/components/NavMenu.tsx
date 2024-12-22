@@ -56,7 +56,7 @@ export default function NavMenu() {
                 </Link>
               </div>
               <div>
-              <Link href="https://github.com/ArctyZ" className=""><Button variant={"outline"} className="bg-[#F3FBFC]">Github <FaGithub/></Button></Link>
+              <Link href="https://github.com/ArctyZ/filefusion-converter" className=""><Button variant={"outline"} className="bg-[#F3FBFC]">Github <FaGithub/></Button></Link>
               </div>
             </div>
           </SheetDescription>

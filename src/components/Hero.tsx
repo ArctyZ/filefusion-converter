@@ -6,7 +6,7 @@ export default function Hero() {
             Convert Your Files Effortlessly
         </div>
         <div className="font-semibold text-lg">
-            <p>Transform your images, videos and audio files into the formats you need—fast, free, and online. </p>
+            <p>Transform your images, videos and audio files into the formats you need—fast, free, and unlimited.</p>
             <ul>
                 <li className="flex flex-row items-center gap-2"><FaCheckCircle/><div>Free Forever</div></li>
                 <li className="flex flex-row items-center gap-2"><FaCheckCircle/><div>High-Quality Conversions</div></li>

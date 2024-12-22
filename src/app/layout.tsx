@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "FileFusion",
@@ -15,12 +16,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        <Navbar/>
-        <div className="pt-20 min-h-screen">
-        {children}
-        </div>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          value={{
+            light: "light",
+            dark: "dark",
+          }}
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <div className="min-h-screen pt-20">{children}</div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
