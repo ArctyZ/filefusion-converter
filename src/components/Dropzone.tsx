@@ -205,7 +205,7 @@ export default function DropzoneBox() {
     } else {
       handleStatus();
     }
-  }, [items]);
+  }, [items, handleStatus]);
 
   //will load the ffmpeg and wasm when the site load
   useEffect(() => {
